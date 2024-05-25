@@ -1,0 +1,20 @@
+<div *ngIf="!isLoggedIn">
+  <button routerLink="/login">Login</button>
+</div>
+<div *ngIf="isLoggedIn">
+  <button (click)="logout()">Kilépés</button>
+</div>
+<div *ngIf="isLoggedIn">
+  <button (click)="redirectToUpload()">Upload</button>
+</div>
+<button (click)="sortByName()">Sort by Name</button>
+<button (click)="sortByDate()">Sort by Date</button>
+<ul>
+  <li *ngFor="let photo of photos">
+    <p (click)="redirectToPicture(photo.id)">
+      {{ photo.name }} - {{ formatDate(photo.creationDate) }}
+    </p>
+    <button *ngIf="isLoggedIn" (click)="deletePhoto(photo.id)">Delete</button>
+  </li>
+</ul>
+

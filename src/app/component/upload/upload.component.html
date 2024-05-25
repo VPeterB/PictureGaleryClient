@@ -1,0 +1,24 @@
+<form (ngSubmit)="uploadPhoto()" [formGroup]="photoForm">
+  <input type="file" (change)="onFileSelected($event)" formControlName="file" />
+  <input type="text" placeholder="Enter photo name (min 40 chars)" formControlName="name" />
+  <button type="submit">Upload</button>
+  <div>
+    <button type="button" (click)="redirectToHome()">Kezdőoldal</button>
+  </div>
+
+  <div *ngIf="photoForm.get('file')?.invalid && photoForm.get('file')?.touched">
+    A fájl feltöltése kötelező.
+  </div>
+
+  <div *ngIf="photoForm.get('name')?.touched && photoForm.get('name')?.value?.length < 40">
+    <div *ngIf="!photoForm.get('name')?.value">
+      A név nincs kitöltve, egy véletlenszerű név lesz generálva.
+    </div>
+    <div *ngIf="photoForm.get('name')?.value?.length > 0 && photoForm.get('name')?.value?.length < 40">
+      A névnek legalább 40 karakter hosszúnak kell lennie, különben egy véletlenszerű név lesz generálva.
+    </div>
+  </div>
+</form>
+
+
+
