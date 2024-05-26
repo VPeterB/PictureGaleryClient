@@ -2,7 +2,7 @@
 
 ## Server:
 
-[PhotoGaleryServer](https://github.com/VPeterB/PhotoGaleryServer) git
+[PhotoGaleryServer](https://github.com/VPeterB/PhotoGaleryServer) git repo
 
 ## Deployments:
 
