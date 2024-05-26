@@ -1,27 +1,39 @@
-# PGClient
+# PictureGalleryClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+## Server:
 
-## Development server
+[PhotoGaleryServer](https://github.com/VPeterB/PhotoGaleryServer) git
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Deployments:
 
-## Code scaffolding
+- server + databse: Openshift: https://photo-galery-server-git-vida-peter1127-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com,
+- api endpoint: https://photo-galery-server-git-vida-peter1127-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api
+- client: Heroku: [https://picture-gallery-client-1e22d88a023f.herokuapp.com/home](https://picture-gallery-client-1e22d88a023f.herokuapp.com/home)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Structure:
 
-## Build
+- DB-Server-Client
+- PostgreSQL database connected to Java spring rest API server in Openshift and this Angular cilent application calls the deployed server, and the client is deployed too but on Heroku.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Task:
 
-## Running unit tests
+### Cél
+Megismerkedni egy PaaS környezettel felhasználói szinten és segítségével létrehozni egy fényképalbum alkalmazást.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Eszközök, feltételek
+- A megoldásnak valamilyen publikusan elérhető PaaS környezetben (OpenShift/AppEngine/Heroku/...) kell műkködnie. 
+- A végleges alkalmazásváltozatnak skálázhatónak és többrétegűnek kell lennie.
+- Tetszőleges nyelv, tetszőleges keretrendszer használható.
+- GitHub-ra feltöltve a build induljon el automatikusan.
+### Funkcionális követelmények:
+- Fényképek feltöltése/törlése.
+- Miden fényképnek legyen neve (min. 40 karakter), és feltöltési dátuma (év-hó-nap óra:perc)
+- Fényképek nevének és dátumának listázása név szerint/dátum szerint rendezve.
+- Lista egy elemére kattintva mutassa meg a név mögötti képet.
+- Felhasználókezelés (regisztráció, belépés, kilépés).
+- Feltöltés, törlés csak bejelentkezett felhasználónak engedélyezett
+### Benyújtandó
+- Rövid dokumentáció a végleges megoldásról (választott környezet, rétegek, kapcsolatok).
+- A megoldás forrásfájljai GitHub-on. (linket kell megadni).
+- Működó alkalmazás bemutatása a PaaS környezetben. 
+- Aki már bemutatta a végleges változatot korábban, annak csak a dokumentációt kell feltöltenie, akár ugyanazt újra.
