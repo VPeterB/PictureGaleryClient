@@ -9,11 +9,7 @@ export class HttpServiceService {
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) {
-    this.ROOT_URL = "http://localhost:8080/api";
-  }
-
-  getAll(uri: string): Observable<any[]>{
-    return this.http.get<any[]>(`${this.ROOT_URL}/${uri}`);
+    this.ROOT_URL = "https://photo-galery-server-git-vida-peter1127-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api";
   }
 
   get(uri: string): Observable<any>{
@@ -26,10 +22,6 @@ export class HttpServiceService {
 
   delete(uri: string): Observable<any>{
     return this.http.delete<any>(`${this.ROOT_URL}/${uri}`);
-  }
-
-  put(uri: string, body: any): Observable<any>{
-   return this.http.put<any>(`${this.ROOT_URL}/${uri}`, body);
   }
 
   post(uri: string, body: any): Observable<any>{
