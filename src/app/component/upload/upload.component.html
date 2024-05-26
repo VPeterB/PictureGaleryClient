@@ -1,6 +1,6 @@
 <form (ngSubmit)="uploadPhoto()" [formGroup]="photoForm">
   <input type="file" (change)="onFileSelected($event)" formControlName="file" />
-  <input type="text" placeholder="Enter photo name (min 40 chars)" formControlName="name" />
+  <input type="text" placeholder="Név (min 40 karakter)" formControlName="name" />
   <button type="submit">Feltöltés</button>
   <div>
     <button type="button" (click)="redirectToHome()">Kezdőoldal</button>
