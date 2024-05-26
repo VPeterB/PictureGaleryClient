@@ -1,20 +1,20 @@
 <div *ngIf="!isLoggedIn">
-  <button routerLink="/login">Login</button>
+  <button routerLink="/login">Belépés</button>
 </div>
 <div *ngIf="isLoggedIn">
   <button (click)="logout()">Kilépés</button>
 </div>
 <div *ngIf="isLoggedIn">
-  <button (click)="redirectToUpload()">Upload</button>
+  <button (click)="redirectToUpload()">Feltöltés</button>
 </div>
-<button (click)="sortByName()">Sort by Name</button>
-<button (click)="sortByDate()">Sort by Date</button>
+<button (click)="sortByName()">Rendezés név szerint</button>
+<button (click)="sortByDate()">Rendezés détum szerint</button>
 <ul>
   <li *ngFor="let photo of photos">
     <p (click)="redirectToPicture(photo.id)">
       {{ photo.name }} - {{ formatDate(photo.creationDate) }}
     </p>
-    <button *ngIf="isLoggedIn" (click)="deletePhoto(photo.id)">Delete</button>
+    <button *ngIf="isLoggedIn" (click)="deletePhoto(photo.id)">Törlés</button>
   </li>
 </ul>
 
